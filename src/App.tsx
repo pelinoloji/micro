@@ -1,23 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "../src/assets/style/App.scss";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Hello from React</p>
+        <p>{count}</p>
+        <div>
+          <button className="button" onClick={() => setCount(count + 5)}>
+            +
+          </button>
+          <button className="button" onClick={() => setCount(count - 3)}>
+            -
+          </button>
+          <button onClick={() => setCount(0)}>clear</button>
+        </div>
       </header>
     </div>
   );
